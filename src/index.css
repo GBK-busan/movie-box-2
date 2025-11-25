@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #101010;
+  color: #fff;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2")
+    format("woff2");
+  font-weight: 100;
+  font-display: swap;
+}
+body {
+  background-color: var(--body_backgroud);
+  color: var(--body_color);
+  font-family: "Pretendard", sans-serif;
+}
+.align_center {
+  display: flex;
+  align-items: center;
+}
+:root {
+  --body_backgroud: #101010;
+  --body_color: #fff;
+  --heading_color: #ffe400;
+}
+[data-theme="light"] {
+  --body_backgroud: #fff;
+  --body_color: #000;
+  --heading_color: #000;
+}
