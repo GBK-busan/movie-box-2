@@ -2,7 +2,6 @@ import Fire from "../../assets/fire.png";
 import Star from "../../assets/glowing-star.png";
 import Party from "../../assets/partying-face.png";
 import "./Navbar.css";
-import DarkMode from "../DarkMode/DarkMode";
 import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
@@ -11,7 +10,6 @@ export default function Navbar() {
       <h1>🎬MovieBox</h1>
 
       <div className="navbar_links">
-        <DarkMode />
         <NavLink to="/">
           인기작품
           <img className="navbar_emoji" src={Fire} alt="fire emoji" />

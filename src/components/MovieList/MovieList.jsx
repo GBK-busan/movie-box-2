@@ -3,7 +3,7 @@ import MovieCard from "./MovieCard";
 import { useEffect, useState } from "react";
 import _ from "lodash";
 
-export default function MovieList({ type, title, emoji }) {
+export default function MovieList({ type, title }) {
   // movies state 상태 관리하기
   const [movies, setMovies] = useState([]);
   // movies 필터링 상태 관리하기
@@ -13,7 +13,7 @@ export default function MovieList({ type, title, emoji }) {
 
   useEffect(() => {
     fetchMovies();
-  }, [{ type }]); // 최초실행 시점에 한번, type이 변경될 때마다 실행
+  }, [type]); // 최초실행 시점에 한번, type이 변경될 때마다 실행
 
   //분류 및 정렬 상태 관리하기
   const [sort, setSort] = useState({
@@ -60,9 +60,7 @@ export default function MovieList({ type, title, emoji }) {
   return (
     <section className="movie_list" id={`${type}`}>
       <header className="align_center movie_list_header">
-        <h2 className="align_center movie_list_heading">
-          {title} <img src={emoji} alt="fire emoji" className="navbar_emoji" />
-        </h2>
+        <h2 className="align_center movie_list_heading">{title}</h2>
 
         <div className="align_center movie_list_fs">
           <ul className="align_center movie_filter">

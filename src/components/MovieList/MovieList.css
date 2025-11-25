@@ -1,43 +1,119 @@
-.movie_list_header {
-  padding: 10px 30px;
-  justify-content: space-between;
-  margin-bottom: 5px;
-}
-
-.movie_list_heading {
-  font-size: 26px;
-  color: var(--heading_color);
-}
-
-.movie_filter {
-  list-style: none;
-  font-size: 16px;
-}
-
-.movie_filter_item {
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.movie_filter_item.active {
-  border-bottom: 1px solid #e6e6e6;
-  font-weight: 500;
-}
-
-.movie_sorting {
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: inherit;
-  height: 30px;
-  padding: 0 5px;
-  margin: 0 10px;
-}
-
-.movie_cards {
+/* 공통 정렬 */
+.align_center {
   display: flex;
+  align-items: center;
+}
+
+/* 섹션 전체 */
+.movie_list {
+  padding: 32px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #f1f5f9;
+}
+
+/* ★ 헤더: 제목 위 / 필터 아래, 세로 정렬 + 간격 */
+.movie_list_header {
+  display: flex;
+  flex-direction: column; /* 세로 */
+  align-items: flex-start; /* 왼쪽 정렬 */
+  gap: 16px; /* 제목–필터 간격 */
+  margin-bottom: 18px;
+}
+
+/* 제목 네온 효과 */
+.movie_list_heading {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 6px #f0f, 0 0 10px #f0f, 0 0 20px #a0a;
+}
+
+/* 필터 + 셀렉트 줄 */
+.movie_list_fs {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+}
+
+/* 평점 필터 박스 */
+.movie_filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(15, 15, 35, 0.9);
+  box-shadow: 0 0 8px rgba(0, 200, 255, 0.3);
+  border: 1px solid rgba(0, 200, 255, 0.4);
+}
+
+/* 평점 버튼 */
+.movie_filter_item {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+  color: #cbd5e1;
+  border: 1px solid transparent;
+  transition: 0.25s ease;
+}
+
+.movie_filter_item:hover {
+  color: #fff;
+  background: rgba(0, 200, 255, 0.2);
+  border-color: rgba(0, 200, 255, 0.5);
+  text-shadow: 0 0 4px #0ff;
+}
+
+/* 클릭된 버튼(8+, 7+, 6+) 네온 */
+.movie_filter_item.active {
+  background: rgba(255, 0, 140, 0.25);
+  color: #fff;
+  border-color: rgba(255, 0, 200, 0.7);
+  box-shadow: 0 0 8px rgba(255, 0, 200, 0.7), 0 0 16px rgba(255, 0, 200, 0.5);
+  text-shadow: 0 0 6px #f0f;
+}
+
+/* 정렬 셀렉트 */
+.movie_sorting {
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 200, 255, 0.5);
+  background: rgba(10, 15, 25, 0.8);
+  color: #e4f0ff;
+  cursor: pointer;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.movie_sorting:hover {
+  box-shadow: 0 0 8px rgba(0, 200, 255, 0.7);
+  border-color: #0ff;
+  color: #fff;
+}
+
+/* 카드 그리드 */
+.movie_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 20px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .movie_list_header {
+    gap: 12px;
+  }
+
+  .movie_list_fs {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
